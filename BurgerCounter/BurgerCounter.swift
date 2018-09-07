@@ -19,7 +19,7 @@ class BurgerCounter {
     
     func countBurgerSupplemeants(basedOnBread bread : Int) {
         meat = Int(Double(bread) * 1.5)
-        salad = Int(Double(bread) * 0.6)
+        salad = Int(Double(bread) * 0.06)+1
         cheese = (bread < 88) ? (1) : bread % 88 != 0 ? Int(bread/88)+1 : Int(bread/88)
         tomato = Int(Double(bread) * 0.03)
         onion = Int(Double(bread) * 0.014)

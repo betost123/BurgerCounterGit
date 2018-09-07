@@ -10,18 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    //lazy var bc = BurgerCounter(bread: Int(typedBurgerAmount.text!) ?? 0)
     var bc = BurgerCounter()
     
     // MARK: Properties
+    @IBOutlet var shopListCollection: [UILabel]!
+    
     @IBOutlet weak var typedBurgerAmount: UITextField!
     @IBOutlet weak var burgerAmountLabel: UILabel!
-    @IBOutlet weak var meatLabel: UILabel!
-    @IBOutlet weak var saladLabel: UILabel!
-    @IBOutlet weak var cheeseLabel: UILabel!
-    @IBOutlet weak var tomatoLabel: UILabel!
-    @IBOutlet weak var onionLabel: UILabel!
-    @IBOutlet weak var xtraAlltLabel: UILabel!
     
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -44,12 +39,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Functions
     func updateViewFromModel() {
-        meatLabel.text = "🥩 \(bc.meat) st"
-        saladLabel.text = "🥦 \(bc.salad) st"
-        cheeseLabel.text = "🧀 \(bc.cheese) förp."
-        tomatoLabel.text = "🍅 \(bc.tomato) kg"
-        onionLabel.text = "🌰 \(bc.onion) kg"
-        xtraAlltLabel.text = "🔮 \(bc.xtraAllt)"
+        shopListCollection[0].text = "🥩 \(bc.meat) st"
+        shopListCollection[1].text = "🥦 \(bc.salad) st"
+        shopListCollection[2].text = "🧀 \(bc.cheese) förp."
+        shopListCollection[3].text = "🍅 \(bc.tomato) kg"
+        shopListCollection[4].text = "🌰 \(bc.onion) kg"
+        shopListCollection[5].text = "🔮 \(bc.xtraAllt)"
     }
 
     override func viewDidLoad() {
